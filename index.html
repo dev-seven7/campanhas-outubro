@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Campanhas - Marcas Outubro</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<style>
+  :root {
+    --ground:#F4EEE3; --raised:#FBF7EF; --raised-2:#F7F0E3; --ink:#1E1A12; --ink-soft:#52493B; --ink-faint:#857866;
+    --line:#DFD7C6; --line-soft:#EAE2D2;
+    --accent:#C63D2F; --accent-deep:#A02A20; --accent-soft:#C63D2F55; --accent-bg:#C63D2F14;
+    --gold:#C08A2E; --warn:#B06A1E; --warn-bg:#B06A1E1a; --ok:#3F7A48; --ok-bg:#3F7A481a;
+    --shadow:0 1px 2px #1e1a1210, 0 8px 24px -12px #1e1a1224;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    --maxw:860px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground:#12100B; --raised:#1B1710; --raised-2:#221D15; --ink:#F1E8D9; --ink-soft:#C4B6A3; --ink-faint:#8B7C69;
+      --line:#332A20; --line-soft:#261F18;
+      --accent:#E56A5D; --accent-deep:#F0857A; --accent-soft:#E56A5D55; --accent-bg:#E56A5D18;
+      --gold:#E0AC5B; --warn:#E0A560; --warn-bg:#E0A56018; --ok:#79AE76; --ok-bg:#79AE7618;
+      --shadow:0 1px 2px #0000004d, 0 10px 30px -14px #00000080;
+    }
+  }
+  :root[data-theme="light"] {
+    --ground:#F4EEE3; --raised:#FBF7EF; --raised-2:#F7F0E3; --ink:#1E1A12; --ink-soft:#52493B; --ink-faint:#857866;
+    --line:#DFD7C6; --line-soft:#EAE2D2;
+    --accent:#C63D2F; --accent-deep:#A02A20; --accent-soft:#C63D2F55; --accent-bg:#C63D2F14;
+    --gold:#C08A2E; --warn:#B06A1E; --warn-bg:#B06A1E1a; --ok:#3F7A48; --ok-bg:#3F7A481a;
+    --shadow:0 1px 2px #1e1a1210, 0 8px 24px -12px #1e1a1224;
+  }
+  :root[data-theme="dark"] {
+    --ground:#12100B; --raised:#1B1710; --raised-2:#221D15; --ink:#F1E8D9; --ink-soft:#C4B6A3; --ink-faint:#8B7C69;
+    --line:#332A20; --line-soft:#261F18;
+    --accent:#E56A5D; --accent-deep:#F0857A; --accent-soft:#E56A5D55; --accent-bg:#E56A5D18;
+    --gold:#E0AC5B; --warn:#E0A560; --warn-bg:#E0A56018; --ok:#79AE76; --ok-bg:#79AE7618;
+    --shadow:0 1px 2px #0000004d, 0 10px 30px -14px #00000080;
+  }
+
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; animation:none !important; } }
+  body { margin:0; background:var(--ground); color:var(--ink); font-family:var(--sans); line-height:1.62; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .wrap { max-width:var(--maxw); margin:0 auto; padding:0 22px; }
+
+  .topbar { position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--ground) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line-soft); }
+  .topbar .wrap { display:flex; align-items:center; justify-content:space-between; height:52px; }
+  .brandmark { font-family:var(--serif); font-weight:700; letter-spacing:.01em; font-size:15px; display:flex; align-items:center; gap:8px; }
+  .brandmark .sw { width:10px; height:10px; border-radius:999px; background:var(--accent); }
+  .toggle { border:1px solid var(--line); background:var(--raised); color:var(--ink-soft); font-family:var(--sans); font-size:12px; padding:6px 12px; border-radius:999px; cursor:pointer; display:inline-flex; align-items:center; gap:6px; }
+  .toggle:hover { border-color:var(--accent-soft); color:var(--ink); }
+  .toggle:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+
+  .hero { padding:66px 0 44px; border-bottom:1px solid var(--line-soft); }
+  .eyebrow { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-deep); font-weight:700; }
+  .hero h1 { font-family:var(--serif); font-weight:700; font-size:clamp(48px,11vw,90px); line-height:.96; margin:16px 0 10px; letter-spacing:-0.02em; text-wrap:balance; }
+  .hero h1 .em { color:var(--accent); }
+  .lede { font-size:clamp(16px,2.3vw,20px); color:var(--ink-soft); max-width:54ch; text-wrap:balance; margin:0; }
+  .heronote { margin-top:20px; display:inline-flex; align-items:center; gap:9px; font-size:13px; color:var(--ink-soft); background:var(--raised); border:1px solid var(--line); border-radius:999px; padding:7px 15px; }
+  .heronote b { color:var(--ink); }
+
+  section { padding:46px 0; border-bottom:1px solid var(--line-soft); }
+  .step-num { font-family:var(--serif); font-size:13px; font-weight:700; color:var(--accent); background:var(--accent-bg); border:1px solid var(--accent-soft); width:30px; height:30px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; flex:none; }
+  .sechead { display:flex; align-items:center; gap:13px; margin:0 0 8px; }
+  h2 { font-family:var(--serif); font-weight:700; font-size:clamp(25px,4.6vw,34px); line-height:1.08; margin:0; letter-spacing:-0.01em; text-wrap:balance; }
+  .subhead { color:var(--ink-soft); font-size:15px; margin:0 0 20px; max-width:64ch; }
+  p { margin:0 0 13px; }
+  strong { color:var(--ink); font-weight:700; }
+
+  .quote { font-family:var(--serif); font-size:clamp(20px,3.4vw,27px); line-height:1.32; color:var(--ink); border-left:3px solid var(--accent); padding:4px 0 4px 20px; margin:6px 0 20px; text-wrap:balance; }
+  .plain { max-width:64ch; color:var(--ink-soft); }
+  .plain strong { color:var(--ink); }
+
+  .ilist { list-style:none; margin:8px 0 0; padding:0; display:grid; gap:9px; }
+  .ilist li { position:relative; padding-left:19px; font-size:14.5px; color:var(--ink-soft); }
+  .ilist li::before { content:""; position:absolute; left:2px; top:9px; width:6px; height:6px; border-radius:999px; background:var(--accent); }
+  .ilist li strong { color:var(--ink); }
+
+  .pending { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700; color:var(--warn); background:var(--warn-bg); border:1px dashed var(--warn); padding:3px 10px; border-radius:999px; white-space:nowrap; }
+
+  .card { background:var(--raised); border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); }
+  .card .chead { padding:16px 20px 13px; border-top:4px solid var(--accent); display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .card .cname { font-family:var(--serif); font-size:21px; font-weight:700; line-height:1.12; }
+  .badge { font-size:10.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:var(--accent); padding:3px 9px; border-radius:999px; white-space:nowrap; flex:none; }
+  .card .cbody { padding:4px 20px 18px; }
+  .priceline { display:flex; align-items:center; gap:10px; margin-top:14px; padding-top:13px; border-top:1px solid var(--line-soft); font-size:14px; color:var(--ink-soft); }
+  .priceline .plk { font-weight:700; color:var(--ink); }
+
+  .benefit { background:var(--raised); border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); margin-bottom:16px; }
+  .benefit:last-child { margin-bottom:0; }
+  .benefit .bhead { display:flex; align-items:center; gap:12px; padding:15px 20px; background:var(--accent-bg); border-bottom:1px solid var(--line-soft); }
+  .benefit .bhead .bic { font-size:24px; line-height:1; flex:none; }
+  .benefit .bhead .bt { font-family:var(--serif); font-size:20px; font-weight:700; }
+  .benefit .bhead .bt small { display:block; font-family:var(--sans); font-size:11.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-deep); }
+  .benefit .bbody { padding:16px 20px 18px; }
+
+  .swapnote { display:flex; gap:12px; align-items:flex-start; background:var(--accent-bg); border:1px solid var(--accent-soft); border-radius:12px; padding:14px 16px; margin:2px 0 18px; font-size:14px; color:var(--ink-soft); }
+  .swapnote .ic { font-size:20px; flex:none; }
+  .swapnote strong { color:var(--ink); }
+  .tickets { display:grid; grid-template-columns:1fr; gap:14px; }
+  .ticket { background:var(--raised); border:2px dashed var(--accent-soft); border-radius:14px; padding:17px 19px; box-shadow:var(--shadow); }
+  .ticket .thead { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; }
+  .tcode { font-family:var(--mono); font-size:16px; font-weight:700; color:var(--accent-deep); letter-spacing:.02em; }
+  .tval { font-size:15px; color:var(--ink); font-weight:700; margin-bottom:4px; }
+  .tdesc { font-size:13.5px; color:var(--ink-soft); }
+
+  .tscroll { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--line-soft); border-radius:12px; margin-top:4px; }
+  table { border-collapse:collapse; width:100%; font-size:14px; min-width:360px; }
+  th, td { text-align:left; padding:11px 15px; border-bottom:1px solid var(--line-soft); }
+  thead th { font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-faint); background:var(--raised-2); }
+  tbody tr:last-child td { border-bottom:none; }
+  td.cond { font-weight:700; color:var(--ink); }
+  td.price { font-weight:700; color:var(--accent-deep); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  tbody td { color:var(--ink-soft); }
+
+  .opnote { display:flex; gap:11px; align-items:flex-start; background:var(--raised-2); border-left:3px solid var(--accent); border-radius:0 10px 10px 0; padding:12px 15px; font-size:14px; color:var(--ink-soft); margin-top:14px; }
+  .opnote .ic { font-size:17px; flex:none; }
+  .opnote strong { color:var(--ink); }
+  .softnote { font-size:13px; color:var(--ink-faint); font-style:italic; border-top:1px dashed var(--line); margin-top:14px; padding-top:12px; }
+
+  .seo { background:var(--raised); border:1px solid var(--line); border-radius:14px; padding:18px 20px; box-shadow:var(--shadow); }
+  .seo .datechips { display:flex; flex-wrap:wrap; gap:8px; margin:2px 0 14px; }
+  .seo .dchip { font-size:13px; font-weight:700; color:var(--ink); background:var(--raised-2); border:1px solid var(--line-soft); border-radius:999px; padding:6px 13px; display:inline-flex; align-items:center; gap:7px; }
+  .seo p { font-size:14.5px; color:var(--ink-soft); margin:0; }
+  .seo p strong { color:var(--ink); }
+  .warnflag { display:inline-block; font-size:11px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--warn); background:var(--warn-bg); border-radius:6px; padding:2px 8px; margin-right:4px; }
+
+  .recap { list-style:none; margin:0; padding:0; display:grid; gap:11px; }
+  .recap li { position:relative; padding-left:30px; font-size:14.5px; color:var(--ink-soft); }
+  .recap li::before { content:"✓"; position:absolute; left:0; top:0; width:20px; height:20px; font-size:12px; font-weight:800; color:var(--accent); background:var(--accent-bg); border-radius:999px; display:inline-flex; align-items:center; justify-content:center; }
+  .recap li strong { color:var(--ink); }
+  .recap li.pend-li::before { content:"⏳"; background:var(--warn-bg); }
+
+  footer { padding:38px 0 60px; }
+  .foot-grid { display:flex; flex-wrap:wrap; gap:22px 44px; }
+  .foot-grid .fk { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); font-weight:700; margin-bottom:6px; }
+  .foot-grid .fv { font-size:14px; color:var(--ink-soft); }
+  .stamp { margin-top:26px; font-size:12px; color:var(--ink-faint); }
+
+  @media (min-width:680px) {
+    .tickets { grid-template-columns:1fr 1fr; }
+    .cards2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  }
+  @media print {
+    :root { color-scheme:light; }
+    * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+    body { background:#fff; } .topbar { position:static; } .toggle { display:none; }
+    section, .card, .benefit, .ticket, .seo { break-inside:avoid; } .hero { padding-top:24px; }
+  }
+
+  .brindes { display:grid; grid-template-columns:1fr; gap:14px; margin:0; }
+  .brindes figure { margin:0; background:var(--raised); border:1px solid var(--line); border-radius:12px; padding:10px; box-shadow:var(--shadow); }
+  .brindes img { display:block; width:100%; height:auto; border-radius:8px; background:#fff; }
+  .brindes figcaption { margin-top:9px; font-size:12.5px; font-weight:700; color:var(--ink-soft); text-align:center; }
+  @media (min-width:620px) { .brindes { grid-template-columns:repeat(3,1fr); } }
+</style>
+
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="brandmark"><span class="sw"></span>Campanhas - Marcas Outubro</span>
+    <button class="toggle" id="tt" aria-label="Alternar tema">◐ Tema</button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Campanha de outubro · Øliver's · Temakeria · Ogro Steaks</div>
+    <h1>Campanhas - Marcas <span class="em">Outubro</span></h1>
+  </div>
+</header>
+
+<section id="conceito">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">1</span><h2>O conceito</h2></div>
+    <p class="quote">&ldquo;Travessuras da Øliver's&rdquo; é o guarda-chuva do mês inteiro.</p>
+  </div>
+</section>
+
+<section id="criancas">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">2</span><h2>Ato 1 · Dia das Crianças</h2></div>
+    <p class="subhead">12 de outubro · feriadão de sábado a segunda, família na rua, salão cheio por natureza. Aqui não se compra movimento, se compra memória.</p>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🧒</span><div class="bt"><small>Narrativa</small>A criança que a gente foi</div></div>
+      <div class="bbody">
+        <p class="plain" style="margin:0;">A criança que a gente foi, sentada na mesma mesa que a criança que a gente criou. Conteúdo emocional com o time da Øliver's mostrando foto de infância, e o convite para o cliente fazer o mesmo: a foto antiga ao lado da foto de hoje, na mesa da pizzaria. É a geração anterior passando o rodízio para a próxima.</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🍕</span><div class="bt"><small>Na loja</small>Experiências com o produto</div></div>
+      <div class="bbody">
+        <ul class="ilist">
+          <li><strong>Rodízio:</strong> toda criança recebe M&amp;M's ou confete para <strong>decorar a própria esfiha doce</strong>. A esfiha é o formato perfeito, é do tamanho da mão dela e é individual, ela escolhe a sua.</li>
+          <li><strong>À la carte:</strong> mesa com criança recebe uma <strong>pizza doce pequena ou esfiha para decorar</strong>.</li>
+          <li><strong>Pizzas doces flambadas em mesa especial (viabilidade a propor):</strong> a pizza sai da cozinha, vai para uma mesa especial, é flambada ali na frente de todos os clientes e depois segue para a mesa, gerando momentos instagramáveis. Vale tanto para o rodízio quanto para o à la carte, junto com a possibilidade de decorar.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="benefit" style="border:2px solid var(--accent);background:var(--accent-bg);">
+      <div class="bhead" style="background:var(--accent);border-bottom:none;">
+        <span class="bic">🎁</span>
+        <div class="bt" style="color:#fff;"><small style="color:#fff;opacity:.85;">A avaliar</small>Brindes possíveis</div>
+      </div>
+      <div class="bbody">
+        <p class="plain" style="color:var(--accent-deep);font-weight:700;">Avaliar o que a criança pode levar para casa, no <strong>delivery</strong> ou no <strong>salão</strong>.</p>
+        <ul class="ilist">
+          <li>Sticker pack Øliver's</li>
+          <li>Folha de desenho de mesa (vira o próprio conteúdo quando a criança mostra o desenho)</li>
+          <li>Tatuagem temporária personalizada</li>
+        </ul>
+        <p class="plain" style="margin:18px 0 10px;"><strong>As ideias já desenhadas para esses brindes</strong> (clique para ver em tamanho real):</p>
+        <div class="brindes">
+          <figure>
+            <a href="img/olv-sticker-pack.png" target="_blank" rel="noopener"><img src="img/olv-sticker-pack-thumb.jpg" alt="Sticker Pack OLV" loading="lazy"></a>
+            <figcaption>Sticker Pack OLV</figcaption>
+          </figure>
+          <figure>
+            <a href="img/olv-folha-desenho.png" target="_blank" rel="noopener"><img src="img/olv-folha-desenho-thumb.jpg" alt="Folha de desenho OLV" loading="lazy"></a>
+            <figcaption>Folha de desenho OLV</figcaption>
+          </figure>
+          <figure>
+            <a href="img/olv-tatuagens.png" target="_blank" rel="noopener"><img src="img/olv-tatuagens-thumb.jpg" alt="Tatuagens temporárias OLV" loading="lazy"></a>
+            <figcaption>Tatuagens temporárias OLV</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--serif);font-size:20px;margin:26px 0 8px;">Os sabores da data</h3>
+    <p class="plain"><strong>Doces:</strong> Mesclado com Confete, Mesclado com M&amp;M, Brigadeiro com granulado, Brownie com Sorvete, Banana na Neve, Paçoquita e Love Feelings.</p>
+    <p class="plain"><strong>Salgados:</strong> Mussarela, Calabresa, Frango com Requeijão, Catupperoni, Pepperoni, Bacon e Amor de Mãe.</p>
+    <div class="opnote"><span class="ic">🔥</span><div><strong>Proposta de experiência:</strong> ter um <strong>flambador no salão</strong>, com uma mesa dedicada onde a pizza doce chega e é flambada na frente do cliente. Vira o momento do dia, e é o vídeo que a própria mesa grava.</div></div>
+    <div class="opnote"><span class="ic">⚠️</span><div><strong>Decidido nos alinhamentos de 25 e 29/09:</strong> o brinde é <strong>um item só</strong>, entre folha de desenho, tatuagem temporária ou cartela de adesivos. A operação separa os confetes (granulado ou M&amp;M's) para a criança montar a esfiha doce no salão e a pizza doce pequena no delivery; a cobertura final é definida pela Estratégia conforme a margem. O flambado na mesa (maçarico) segue em avaliação com a operação.</div></div>
+  </div>
+</section>
+
+<section id="professor">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">3</span><h2>Ato 2 · Dia do Professor</h2></div>
+    <p class="subhead">15 de outubro · data de conteúdo, não de operação.</p>
+    <p class="plain">O objetivo é marcação, compartilhamento e engajamento, com memes e humor de sala de aula, que é onde essa data rende muito mais do que um &ldquo;Feliz Dia dos Professores&rdquo;.</p>
+
+    <h3 style="font-family:var(--serif);font-size:20px;margin:22px 0 8px;">Linhas de conteúdo</h3>
+    <ul class="ilist">
+      <li>&ldquo;Todo mundo teve um professor que dizia 'é rapidinho' e apagava metade do quadro.&rdquo;</li>
+      <li>&ldquo;Professor que deixa comer em sala é melhor que todos os outros.&rdquo;</li>
+      <li>&ldquo;Marca aquele professor que merece uma pizza e zero trabalho pra corrigir hoje.&rdquo;</li>
+    </ul>
+    <div class="opnote"><span class="ic">📌</span><div>Cupom <strong>PROFESSOR</strong>, válido só em <strong>15/10</strong>. Um benefício no rodízio nesse dia está em avaliação de margem com a Estratégia.</div></div>
+  </div>
+</section>
+
+<section id="halloween">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">4</span><h2>Ato 3 · Øliver's After Dark</h2></div>
+    <p class="subhead">31 de outubro · Halloween cai num sábado em 2026 e emenda com Finados na segunda.</p>
+    <p class="plain">É a noite de maratona de filme, encontro, festa e madrugada, ou seja, exatamente a ocasião que a Øliver's já vende.</p>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🕯️</span><div class="bt"><small>Narrativa e estética</small>Luz baixa, mesa preta, fumaça</div></div>
+      <div class="bbody">
+        <p class="plain">Luz baixa, mesa preta, fumaça, o flambado na penumbra. Referência de linguagem: a cena da pizza em <em>A Nightmare on Elm Street 4</em>, uma das imagens gastronômicas mais conhecidas do horror. Usamos como <strong>inspiração de direção de arte, nunca reprodução de imagem do filme</strong>.</p>
+        <p class="plain" style="margin:0;"><strong>Paleta:</strong> preto, roxo (a cebola roxa já entrega), vermelho (pimenta biquinho e geleia de pimenta) e o verde da Torta de Limão.</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🎃</span><div class="bt"><small>Lojas decoradas</small>O conteúdo que o cliente grava sozinho</div></div>
+      <div class="bbody">
+        <p class="plain" style="margin:0;">Decoração nas unidades com salão e equipe fantasiada.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--serif);font-size:20px;margin:26px 0 6px;">O cardápio</h3>
+    <p class="plain" style="font-size:14px;">Só com o que está no cardápio hoje.</p>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🍕</span><div class="bt"><small>Nas redes e com influenciadores</small>As pizzas no clima de Halloween</div></div>
+      <div class="bbody">
+        <p class="plain">Vamos abordar as pizzas que já entram no clima de Halloween, do universo de Sauron, Targaryen e Game of Thrones. São elas que serão ressaltadas nas redes e com os influenciadores.</p>
+        <p class="plain"><strong>Sauron</strong> (costela suína, bacon e barbecue) é a pizza mais escura do cardápio e o vilão mais conhecido do cinema de fantasia: é a capa da campanha. <strong>Targaryen</strong> (pepperoni e pimenta biquinho), fogo e sangue. <strong>Golden Aussie</strong> e <strong>Gimli</strong> fecham o tom queimado e o gorgonzola escuro. <strong>Maverick</strong> (rodízio) reforça o blend com barbecue.</p>
+        <p class="plain"><strong>Queijo Coalho com Geleia de Pimenta</strong>: vermelho escorrendo sobre branco, a foto mais Halloween do cardápio. <strong>B.T.T.R.</strong>, os pontos vermelhos de pimenta biquinho sobre o escuro. <strong>Toscana</strong> e <strong>Marie</strong>, a pimenta calabresa que arde.</p>
+        <p class="plain"><strong>Torta de Limão</strong>, fazendo alusão ao verde, que é a cor que ressalta também no Halloween.</p>
+        <p class="plain" style="margin:0;">Outras pizzas que relembram esses momentos: <strong>Stark</strong>, <strong>Brownie</strong>, <strong>Love Feelings</strong>, <strong>Morango na Neve</strong> (rodízio), <strong>Goiabada Maraviosa</strong> e <strong>Da Cor do Pecado</strong> (rodízio).</p>
+      </div>
+    </div>
+  </section>
+
+<section id="sazonal">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">5</span><h2>Possibilidade de um sabor criação</h2></div>
+    <p class="subhead">Opções de criação de um sabor sazonal:</p>
+    <div class="cards2" style="display:grid;gap:16px;">
+      <div class="card"><div class="chead"><div class="cname">Bloody Pepperoni</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Pepperoni, muçarela, molho de tomate bem aparente e barbecue. Referência visual a sangue e cenas clássicas de terror, usando o vermelho natural do molho e do pepperoni.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">Black Widow</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Pepperoni, bacon, muçarela e azeitonas pretas. A referência vem da viúva-negra e do imaginário de aranhas no Halloween; as azeitonas reforçam o visual escuro e podem ser usadas na composição.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">Hellfire</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Pepperoni, bacon, muçarela, jalapeño ou pimenta e barbecue. Inspirada em fogo, inferno e terror sobrenatural, com proposta mais picante.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">Dracula</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Calabresa, muçarela, alho crocante e molho de tomate. A referência vem do clássico universo dos vampiros, usando o alho como elemento central da brincadeira.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">Garlic Slayer</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Bacon, muçarela, parmesão e bastante alho crocante. Referência ao alho como proteção contra vampiros, criando uma pizza temática sem depender de ingredientes incomuns.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">The Vampire</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Pepperoni, bacon, muçarela, barbecue e molho de tomate extra. Inspirada na estética vampiresca, com predominância de tons vermelhos e sabores intensos.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">Pumpkin Fire</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Abóbora assada, bacon, queijo e toque de pimenta. A abóbora é um dos maiores símbolos do Halloween e o elemento picante adiciona a referência ao fogo.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">Jack Ø&rsquo;Lantern</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Pepperoni, cheddar e muçarela. Inspirada nas tradicionais abóboras esculpidas de Halloween; o cheddar cria o tom alaranjado e os pepperonis podem ajudar na composição visual do rosto.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">Ghost Cheese</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Muçarela, Catupiry ou cream cheese e parmesão. Inspirada em fantasmas, com predominância de ingredientes brancos e possibilidade de pequenas formas de &ldquo;fantasma&rdquo; na finalização.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">The Exorcist</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Quatro queijos, pepperoni e pimenta. Referência ao terror sobrenatural e aos filmes de possessão, com sabor intenso e picante.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">Crime Scene</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Pepperoni, bacon, muçarela, molho de tomate e barbecue. Referência às cenas de crime dos filmes de terror, usando molhos e tons vermelhos como elemento visual.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">Last Slice</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Pepperoni, bacon, Catupiry e barbecue artesanal. Inspirada no clássico conflito pela última fatia, transformado em narrativa de suspense e terror: &ldquo;quem vai pegar a última?&rdquo;</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">Black Magic</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Massa escura com carvão vegetal alimentício, muçarela, pepperoni e Catupiry. Referência à magia negra, bruxas e estética dark de Halloween, com forte impacto visual.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">Bloody Banana</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Banana, canela, doce de leite ou chocolate branco e calda de frutas vermelhas. Releitura temática de uma pizza doce, usando a calda vermelha para criar a estética &ldquo;bloody&rdquo;.</p></div></div>
+      <div class="card"><div class="chead"><div class="cname">Graveyard Brownie Pizza</div></div><div class="cbody"><p class="plain" style="margin:0;font-size:14px;">Chocolate, brownie ou biscoito triturado e elementos de chocolate formando pequenas lápides. Inspirada em cemitérios e filmes clássicos de terror, com forte potencial visual para sobremesa.</p></div></div>
+      <div class="opnote" style="grid-column:1/-1;"><span class="ic">⚠️</span><div>As 15 opções vão como <strong>proposta ao Produto</strong>, que avalia se é possível uma sazonal ainda esse mês.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="conversao">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">6</span><h2>Conversão</h2></div>
+    <ul class="ilist">
+      <li><strong>Disparos Manychat</strong> com o cupom travessura.</li>
+      <li><strong>Conteúdo com influenciadores</strong> falando sobre a campanha.</li>
+      <li><strong>Banners atualizados no site.</strong></li>
+      <li><strong>Peças criativas de divulgação.</strong></li>
+    </ul>
+  </div>
+</section>
+
+<section id="temakeria">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">7</span><h2>Temakeria · Outubro</h2></div>
+    <p class="subhead">Datas a serem abordadas:</p>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">📍</span><div class="bt"><small>Durante todo o mês</small>Araruama</div></div>
+      <div class="bbody">
+        <p class="plain"><strong>Inauguração confirmada em 09/10.</strong> Ativação da campanha de lançamento rodando o mês inteiro, com produto isca ativo na Landing Page, envio de brindes e cupons impressos.</p>
+        <ul class="ilist">
+          <li>Cupom <strong>AMOTEMAKERIA</strong>, 10% OFF na primeira compra</li>
+          <li>Produto isca: <strong>Big Hot de Banana com Doce de Leite</strong> grátis nos primeiros pedidos acima do valor mínimo</li>
+          <li>Giveaway de inauguração: combo completo para 3 pessoas (temaki + yakisoba + sobremesa)</li>
+          <li><strong>10 criadores locais</strong> (permuta + pagos), com script e direcionamento de conteúdo</li>
+          <li>Brindes: ímã de geladeira, flyer dobrável de carro e panfletos</li>
+        </ul>
+        <div class="opnote" style="margin-top:14px;"><span class="ic">💰</span><div>Tráfego em funil completo, investimento decrescente ao longo de 3 meses: <strong>R$7 mil</strong> (captação + compra) → <strong>R$5 mil</strong> (conversão) → <strong>R$3 mil</strong> (recompra).</div></div>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🧒</span><div class="bt"><small>12/10</small>Dia das Crianças</div></div>
+      <div class="bbody">
+        <ul class="ilist">
+          <li>Ressaltaremos sobremesas + Fritinhos e sobremesas (não podemos veicular imagens de crianças em propagandas nos canais digitais, proibido pela lei/plataformas)</li>
+          <li>Cupom <strong>DIA12</strong> para fomentar canal próprio nesse dia</li>
+          <li>Conteúdos Influencers + memes e trends</li>
+        </ul>
+        <p class="plain" style="margin-top:14px;"><strong>A narrativa:</strong> essa data é para quem lembra de ter sido criança. O feriado emenda o fim de semana, e é um fim de semana do mês em que geralmente a casa inteira senta junto.</p>
+        <p class="plain">Ressaltaremos as Sobremesas + Fritinhos: Big Hot de Doce de Leite com Paçoca, Harumaki doce (Romeu e Julieta, Doce de Leite, Nutella, Banana com Nutella), Hot Roll de Goiabada, Hot Roll de Banana com Nutella.</p>
+        <p class="plain" style="margin:0;">Fritinhos: Temaki Empanado, Temaki Califórnia, Hot Roll Tradicional, Nachos, Cheddar Nachos, Yakissoba de Frango. É a resposta para a pergunta que toda mesa faz antes de pedir japonês em feriado. Na Temakeria ninguém fica de fora da mesa.</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">📚</span><div class="bt"><small>15/10</small>Dia dos Professores</div></div>
+      <div class="bbody">
+        <ul class="ilist">
+          <li>Ressaltaremos produtos, que &ldquo;um professor merece para comemorar&rdquo;, como os Temaki Salmão Tataki, Temaki Salmão Crisp e Temaki Shi-Sa</li>
+          <li>Cupom <strong>PROFESSOR</strong> para fomentar canal próprio nesse dia</li>
+          <li>Conteúdo em Collab com Vecchi + trends professores que amam japa</li>
+        </ul>
+        <p class="plain" style="margin-top:14px;"><strong>A narrativa:</strong> professor não quer homenagem de calendário. Quer ser tratado como quem entende.</p>
+        <p class="plain">Por isso os três escolhidos são justamente os temakis com sobrenome, os que pedem repertório para escolher. Tataki é selado por fora e cru por dentro, a técnica de quem sabe a hora exata de parar. Crisp é textura, quebra e som. Shi-Sa leva o nome do leão guardião de Okinawa, a criatura que fica na porta protegendo a casa.</p>
+        <p class="plain" style="margin:0;">Um professor merece o que tem história dentro.</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🎃</span><div class="bt"><small>31/10</small>Halloween</div></div>
+      <div class="bbody">
+        <ul class="ilist">
+          <li>Ressaltaremos produtos flambados e spicy, brincando com a estética do Halloween de forma bonita e não caricata, como os Big Hot Roll de Salmão com Cubos, Joe de Salmão Flambado e Sushi de Salmão Flambado, Hot Roll Spicy e Temaki Salmão Spicy</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="opnote"><span class="ic">⚠️</span><div><strong>Decidido nos alinhamentos de 25 e 29/09:</strong> o pedido mínimo do cupom <strong>DIA12</strong> será definido com a operação e a Estratégia antes da divulgação. <strong>Sem produto novo em outubro</strong>: o cardápio está sendo renovado, com novos nomes, combos e promoções, e é isso que a comunicação do mês destaca.</div></div>
+  </div>
+</section>
+
+<section id="ogro">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">8</span><h2>Ogro · Outubro</h2></div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🧒</span><div class="bt"><small>12/10, segunda</small>&ldquo;Faça sua criança interior feliz hoje&rdquo;</div></div>
+      <div class="bbody">
+        <p class="plain"><strong>Formato:</strong> entra como episódio do quadro já aprovado pela Bárbara, &ldquo;Já deu por hoje&rdquo;, que é exatamente essa lógica.</p>
+        <p class="plain" style="margin:0;">Adulto no feriado, comendo com as mãos, lambuzado, feliz. Sem discurso de culpa, igual o Ep. 11 já planejado.</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">📚</span><div class="bt"><small>15/10, quinta</small>Dia do Professor</div></div>
+      <div class="bbody">
+        <p class="plain" style="margin:0;"><strong>Ação principal:</strong> usar a edição de outubro do quadro &ldquo;Fazer o quê, exageramos&rdquo; (a entrega especial mensal) para presentear um professor.</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🎃</span><div class="bt"><small>31/10, sábado</small>Halloween</div></div>
+      <div class="bbody">
+        <p class="plain">O bloco Papo de Ogro já agendado vira o episódio da origem do apelido. Jimmy contando por que &ldquo;ogro&rdquo;. É história de marca, não é post de data comemorativa.</p>
+        <p class="plain">Ressaltando burgers &ldquo;monstros&rdquo; para todos os estilos: Ogrostela, Hiper McManis e Texano.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><div class="fk">Marcas</div><div class="fv">Øliver's · Temakeria Universitária · Ogro Steaks</div></div>
+      <div><div class="fk">Período</div><div class="fv">Outubro de 2026</div></div>
+      <div><div class="fk">Datas em comum</div><div class="fv">12/10 · 15/10 · 31/10</div></div>
+      <div><div class="fk">Feito por</div><div class="fv">Marketing, Seven7</div></div>
+    </div>
+    <div class="stamp">Documento interno da campanha · versão de trabalho para aprovação · atualizado em 06/10/2026.</div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('tt');
+    function cur() { var a = root.getAttribute('data-theme'); if (a) return a; return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    btn.addEventListener('click', function () { root.setAttribute('data-theme', cur() === 'dark' ? 'light' : 'dark'); });
+  })();
+</script>
+</body>
+</html>
